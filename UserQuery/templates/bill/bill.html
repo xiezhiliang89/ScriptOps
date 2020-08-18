@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+{% load staticfiles %}
+{% block context %}     
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="page-header">
+				<h1>
+					用户账单查询 <small>bill</small>
+				</h1>
+				<div class="row clearfix">
+						<div class="col-md-12 column">
+							<ul class="breadcrumb">
+								<li>
+									 <a href="/">Home</a>
+								</li>
+								<li class="active">
+									day_bill
+								</li>
+							</ul>
+						</div>
+				</div>
+			</div>
+			<form role="form" method="POST" action="/userquery/bill/">
+				{% csrf_token %}
+
+				<div class="form-group">
+					<label for="number">号码</label><input class="form-control" id="InputMsisdn" type="text" name="number" value="{{ number }}" />
+				</div> 
+				<div class="form-group">
+					<div class="btn-group" data-toggle="buttons">
+						<label class="btn btn-info">
+							<input type="radio" value="ocs" name="user_type"/> ocs
+						</label>
+						<label class="btn btn-info">
+							<input type="radio" value="cloud" name="user_type"/> cloud
+						</label>
+					</div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                               <label class="btn btn-success">
+					        	<input type="radio" value="111" name="bill_type"/> day_bill
+						</label>
+						<label class="btn btn-success">
+							<input type="radio" value="112" name="bill_type"/> user_bill
+						</label>
+					</div>
+					<div class="btn-group">
+						<label >
+							<input class="btn btn-danger " id="StartDate" type="date" name="starttime"/>  
+						</label>
+						<label >
+							<input class="btn btn-danger " id="Enddate" type="date" name="endtime"/>  
+						</label>		
+					</div>
+				</div>
+				<div class="form-group">
+					<button class="btn btn-primary btn-lg btn-block active" type="submit">执行</button>
+				</div>
+			</form> 
+			<h2>
+				执行结果
+			</h2>
+
+			<pre> {{ message }} </pre> 
+
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock context %}

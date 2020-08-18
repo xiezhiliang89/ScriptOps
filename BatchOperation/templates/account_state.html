@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+{% load staticfiles %}
+{% block context %}     
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="page-header">
+				<h1>
+					用户信息查询 <small>look.pl</small>
+				</h1>
+				<div class="row clearfix">
+						<div class="col-md-12 column">
+							<ul class="breadcrumb">
+								<li>
+									 <a href="/">Home</a>
+								</li>
+								<li class="active">
+									look
+								</li>
+							</ul>
+						</div>
+				</div>
+			</div>
+			<form role="form" method="POST" action="/userquery/look/">
+				{% csrf_token %}
+				<div class="form-group">
+					 <label for="number">号码</label><input class="form-control" id="InputMsisdn" type="text" name="number" value="{{ number }}" />
+				</div> 
+				<div class="form-group">
+					<div class="btn-group" data-toggle="buttons">
+						<label class="btn btn-info">
+							<input type="radio" value="ocs" name="user_type"/> ocs
+						</label>
+						<label class="btn btn-info">
+							<input type="radio" value="cloud" name="user_type"/> cloud
+						</label>
+					</div>	
+				</div>
+				<div class="form-group">
+					<button class="btn btn-primary btn-lg btn-block active" type="submit">执行</button>
+				</div>
+			</form> 
+			<h2>
+				执行结果
+			</h2>
+				<pre> {{ message }} </pre>
+
+
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="{% static 'jQuery/js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+{% endblock context %}

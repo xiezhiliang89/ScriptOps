@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+{% load staticfiles %}
+{% block context %}     
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="page-header">
+				<h1>
+					PROXY脚本 <small>proxy_tool</small>
+				</h1>
+				<div class="row clearfix">
+						<div class="col-md-12 column">
+							<ul class="breadcrumb">
+								<li>
+									 <a href="/">Home</a>
+								</li>
+								<li class="active">
+									proxy_tool
+								</li>
+							</ul>
+						</div>
+				</div>
+			</div>
+			<form role="form" method="POST" action="/startup/proxy_tool/">
+				{% csrf_token %}
+				<div class="from-group">
+					<label for="host">库</label>
+					<select class="selectpicker form-control" name="host" title="请选择执行库">
+						<option value="bf1">bf1</option>
+						<option value="bf2">bf2</option>
+						<option value="bf3">bf3</option>
+						<option value="bf4">bf4</option>
+						<option value="bf5">bf5</option>
+						<option value="bf6">bf6</option>
+						<option value="bf7">bf7</option>
+						<option value="cloud">cloud</option>
+						<option value="all">all</option>
+					</select>
+				</div>
+				<br>
+				<div class="from-group">
+						<label for="business-type">业务类型</label>
+						<select class="selectpicker form-control" name="business-type" title="请选择业务类型">
+							<option value="1">CS</option>
+							<option value="2">GGSN</option>
+							<option value="3">EGGSN</option>
+							<option value="4">EGGSN2</option>
+							<option value="5">INTER</option>
+							<option value="6">WLAN</option>
+							<option value="7">FIX</option>
+							<option value="8">ALL</option>
+						</select>
+				</div>
+				<br>
+				<div class="from-group">
+						<label for="business-type">执行模式</label>
+						<select class="selectpicker form-control" name="operation-type" title="请选择执行模式">
+							<option value="1">off</option>
+							<option value="2">on</option>
+							<option value="3">reconfig</option>
+							<option value="4">query</option>
+							<option value="5">proc</option>
+						</select>
+				</div>
+				<br>
+				<div class="form-group">
+					<button class="btn btn-primary btn-lg btn-block active" type="submit">执行</button>
+				</div>
+
+			</form> 
+			<h2>
+				执行结果
+			</h2>
+
+			<pre> {{ result }} </pre> 
+
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="{% static 'jQuery/js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+{% endblock context %}

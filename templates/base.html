@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+     <!-- 引入jQuery  -->
+     <script type="text/javascript" src="{% static 'jQuery/js/jquery.min.js' %}"></script>
+     <script type="text/javascript" src="{% static 'jQuery/js/jquery-ui.js' %}"></script>
+     <script type="text/javascript" src="{% static 'jQuery/js/jquery-latest.js' %}"></script>
+     
+     <!-- 引入jQuery
+     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+     <script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.js"></script>
+     <script src="http://code.jquery.com/jquery-latest.js"></script>
+     --> 
+     <!-- 引入 Bootstrap -->
+     <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+     <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+     <link href="{% static 'bootstrap/css/bootstrap-select.min.css' %}" rel="stylesheet" type="text/css">
+     <link href="{% static 'bootstrap/css/fileinput.min.css' %}" media="all" rel="stylesheet" type="text/css">
+
+
+     <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+     <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>    
+     
+     <!-- 引入 Bootstrap-select -->
+     <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap-select.min.js' %}"></script>
+     <script type="text/javascript" src="{% static 'bootstrap/js/i18n/defaults-zh_CN.min.js' %}"></script>
+     <!-- 引入 Bootstrap-fileinput -->
+     <script type="text/javascript" src="{% static 'bootstrap/js/fileinput.min.js' %}"></script>
+     <script type="text/javascript" src="{% static 'bootstrap/js/locales/zh.js' %}"></script>
+     <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    <title>OCS脚本运维平台</title>        
+</head>
+<body>
+<!-- bootstrap 特性容器 -->
+{% block context %}
+
+{% endblock context %}
+</body>
+</html>
