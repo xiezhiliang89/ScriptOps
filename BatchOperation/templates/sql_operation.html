@@ -7,7 +7,7 @@
 		<div class="col-md-12 column">
 			<div class="page-header">
 				<h1>
-					sql操作 <small>look.pl</small>
+					SQL执行 <small>sql可视化执行</small>
 				</h1>
 				<div class="row clearfix">
 						<div class="col-md-12 column">
@@ -16,39 +16,63 @@
 									 <a href="/">Home</a>
 								</li>
 								<li class="active">
-									look
+									sql_operation
 								</li>
 							</ul>
 						</div>
 				</div>
 			</div>
-			<form role="form" method="POST" action="/userquery/look/">2
+			<form role="form" method="POST" action="/startup/proxy_tool/">
+                {% csrf_token %}
+                
 				<div class="form-group">
-					 <label for="number">号码</label><input class="form-control" id="InputMsisdn" type="text" name="number" value="{{ number }}" />
+					<label for="number">sql语句</label><input class="form-control" id="InputSQL" type="text" name="sql可视化执行" value="SELECT * XXXX" />
 				</div> 
-				<div class="form-group">
-					<div class="btn-group" data-toggle="buttons">
-						<label class="btn btn-info">
-							<input type="radio" value="ocs" name="user_type"/> ocs
-						</label>
-						<label class="btn btn-info">
-							<input type="radio" value="cloud" name="user_type"/> cloud
-						</label>
-					</div>	
+				<div class="from-group">
+					<label for="host">数据库</label>
+					<select class="selectpicker form-control" name="host" title="请选择数据库">
+						<option value="bf1">mysql</option>
+						<option value="bf2">oracle</option>
+					</select>
 				</div>
+				<br>
+				<div class="from-group">
+						<label for="business-type">归属域</label>
+						<select class="selectpicker form-control" name="business-type" title="请选择执行域">
+							<option value="1">CB赠送</option>
+							<option value="2">CB用户信息</option>
+							<option value="3">OAM</option>
+						</select>
+				</div>
+                <br>
+                
+				<!-- <div class="from-group">
+						<label for="business-type">执行模式</label>
+						<select class="selectpicker form-control" name="operation-type" title="请选择执行模式">
+							<option value="1">off</option>
+							<option value="2">on</option>
+							<option value="3">reconfig</option>
+							<option value="4">query</option>
+							<option value="5">proc</option>
+						</select>
+				</div> -->
+				<!-- <br> -->
 				<div class="form-group">
 					<button class="btn btn-primary btn-lg btn-block active" type="submit">执行</button>
 				</div>
+
 			</form> 
 			<h2>
 				执行结果
 			</h2>
-				<pre> {{ message }} </pre>
 
+			<pre> {{ result }} </pre> 
 
 		</div>
 	</div>
 </div>
+
 <script type="text/javascript" src="{% static 'jQuery/js/jquery.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
 {% endblock context %}
