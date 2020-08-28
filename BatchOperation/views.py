@@ -19,4 +19,4 @@ def batch_operation(request):
     return render(request,'batch_operation.html')
 
 def sql_operation(request):
-    pass
+    return 'hello world'
