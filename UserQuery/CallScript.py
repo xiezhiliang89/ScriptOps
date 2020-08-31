@@ -11,9 +11,9 @@ def call_script(app,*args):#msisdn,callType,target,date=None):
         
     if app=="UserQuery":
         if len(args)==4:
-            output=subprocess.Popen(SCRIPT_PATH[app].format(args[0],args[1],args[2],args[3]),shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+            output=subprocess.Popen(SCRIPT_PATH[app].format(args[0],args[2],args[1],args[3]),shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
         elif len(args)==3:
-            output=subprocess.Popen(SCRIPT_PATH[app].format(args[0],args[1],args[2],None),shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+            output=subprocess.Popen(SCRIPT_PATH[app].format(args[0],args[2],args[1],None),shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
     elif app=="BatchOperation":
         output=subprocess.Popen(SCRIPT_PATH[app].format(args[0],args[1]),shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
     stdout=output.stdout.read().decode('GBK')
