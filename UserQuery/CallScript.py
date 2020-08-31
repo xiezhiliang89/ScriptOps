@@ -7,7 +7,7 @@ SCRIPT_PATH={
     'BatchOperation':os.path.join(SQL_TOOLS_DIR,'do_sql.pl -t {0} -s {1}')
 }
 
-def call_script(app,msisdn,callType,target,date=None):
+def call_script(app,*args):#msisdn,callType,target,date=None):
     
     if app=="UserQuery":
         output=subprocess.Popen(SCRIPT_PATH[app].format(args[0],args[1],args[2],args[3]),shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
