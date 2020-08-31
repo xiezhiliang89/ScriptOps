@@ -21,7 +21,7 @@ def batch_operation(request):
 
 def sql_operation(request):
     if request.method=="POST":
-        sql=request.POST.get('sql')
+        sql='\"'+request.POST.get('sql')+'\"'
         buss_type=request.POST.get('business-type')
         message=call_script('BatchOperation',buss_type,sql)
         if message:
