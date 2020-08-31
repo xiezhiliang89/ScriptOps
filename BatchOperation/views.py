@@ -23,7 +23,7 @@ def sql_operation(request):
     if request.method=="POST":
         sql=request.POST.get('sql')
         buss_type=request.POST.get('business-type')
-        message=call_script('BatchOperation',sql,buss_type)
+        message=call_script('BatchOperation',buss_type,sql)
         if message:
             context={'message':message,'sql':sql}
             return render(request,'sql_operation.html',context)
