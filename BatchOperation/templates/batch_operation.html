@@ -28,8 +28,8 @@
 						<label for="exampleInputFile">文件上传</label>
 						<input class="file" type="file" id="InputFile" name="batch_file" multiple="multiple" data-show-upload="false"/>
 				</div>
-				<br>
-				<div class="form-group">
+				<!-- <br> -->
+				<!-- <div class="form-group">
 						<label for="business-type">操作类型</label>
 						<select class="selectpicker form-control" name="business-type" title="请选择业务类型">
 							<option value="CS">CS</option>
@@ -41,8 +41,8 @@
 							<option value="FIX">FIX</option>
 							<option value="ALL">ALL</option>
 						</select>
-				</div>
-				<br>
+				</div> -->
+				<!-- <br> -->
 
 				<br>
 				<div class="form-group">
@@ -54,7 +54,7 @@
 				执行结果
 			</h2>
 
-			<pre> {{ result }} </pre> 
+			<pre> {{ result|safe }} </pre> 
 
 		</div>
 	</div>
