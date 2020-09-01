@@ -9,13 +9,15 @@ def batch_operation(request):
     if request.method=='POST':
         businessType=request.POST['business-type']
         batchFile=request.FILES.get('batch_file')
-        print(type(batchFile))
-        print(businessType)
-        filepath=os.path.join(r"/ocs/opsadmin/ScriptOps/BatchOperation/batch_fille",batchFile.name)
-        f=open(filepath,mode='wb')
-        for i in batchFile.chunks():
-            f.write(i)
-        f.close()
+        # print(type(batchFile))
+        # print(businessType)
+        # filepath=os.path.join(r"/ocs/opsadmin/ScriptOps/BatchOperation/batch_fille",batchFile.name)
+        filepath="/ocs/opsadmin/ScriptOps/BatchOperation/batch_fille"
+        for f in batchFile:
+            dest=open(os.path.join(filepath,f.name),mode='wb')
+            for c in batchFile.chunks():
+                dest.write()
+            dest.close()
         return HttpResponse("<h2>文件上传成功</h2>")
     return render(request,'batch_operation.html')
 
