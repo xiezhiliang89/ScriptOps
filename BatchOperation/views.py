@@ -24,6 +24,7 @@ def sql_operation(request):
         sql='\"'+request.POST.get('sql')+'\"'
         buss_type=request.POST.get('business-type')
         message=call_script('BatchOperation',buss_type,sql)
+        sql=sql.strip('\"')
         if message:
             context={'message':message,'sql':sql}
             return render(request,'sql_operation.html',context)
