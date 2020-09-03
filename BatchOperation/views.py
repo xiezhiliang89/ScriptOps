@@ -5,7 +5,7 @@ from .CallScript import call_script
 # Create your views here.
 
 
-def batch_operation(request):
+def upload(request):
     if request.method=='POST':
         businessType=request.POST['business-type']
         batchFile=request.FILES.getlist('batch_file')
@@ -24,8 +24,12 @@ def batch_operation(request):
         
         context={'result':result}
         # return HttpResponse("<h2>文件上传成功</h2>")
-        return render(request,'upload_fille.html',context)
-    return render(request,'upload_fille.html')
+        return render(request,'upload_file.html',context)
+    return render(request,'upload_file.html')
+
+def download(request):
+    return render(request,'download_file.html')
+
 
 def sql_operation(request):
     if request.method=="POST":

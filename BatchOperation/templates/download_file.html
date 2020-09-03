@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+{% load staticfiles %}
+{% block context %}     
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="page-header">
+				<h1>
+					文件下载 <small>download file</small>
+				</h1>
+				<div class="row clearfix">
+						<div class="col-md-12 column">
+							<ul class="breadcrumb">
+								<li>
+									 <a href="/">Home</a>
+								</li>
+								<li class="active">
+									download
+								</li>
+							</ul>
+						</div>
+				</div>
+			</div>
+			<form role="form" method="POST" action="/batch/download_file/">
+                {% csrf_token %}
+                
+				<div class="form-group">
+					<label for="number">文件路径</label><input class="form-control" id="filepath" type="text" name="filepath" value="/home" />
+				</div> 
+				<!-- <div class="from-group">
+					<label for="host">数据库</label>
+					<select class="selectpicker form-control" name="host" title="请选择数据库">
+						<option value="bf1">mysql</option>
+						<option value="bf2">oracle</option>
+					</select>
+				</div> -->
+				<br>
+				<div class="from-group">
+						<label for="business-type">归属域</label>
+						<select class="selectpicker form-control" name="business-type" title="请选择执行域">
+							<option value="PRESENT">CB赠送数据-Oracle</option>
+							<option value="OCS_CB">CB用户数据-Mysql</option>
+							<option value="OAM">OAM-Oracle</option>
+						</select>
+				</div>
+                <br>
+                
+				<!-- <div class="from-group">
+						<label for="business-type">执行模式</label>
+						<select class="selectpicker form-control" name="operation-type" title="请选择执行模式">
+							<option value="1">off</option>
+							<option value="2">on</option>
+							<option value="3">reconfig</option>
+							<option value="4">query</option>
+							<option value="5">proc</option>
+						</select>
+				</div> -->
+				<!-- <br> -->
+				<div class="form-group">
+					<button class="btn btn-primary btn-lg btn-block active" type="submit">执行</button>
+				</div>
+
+			</form> 
+			<h2>
+				执行结果
+			</h2>
+
+			<pre> {{ message }} </pre> 
+
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="{% static 'jQuery/js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+{% endblock context %}

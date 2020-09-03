@@ -7,7 +7,7 @@
 		<div class="col-md-12 column">
 			<div class="page-header">
 				<h1>
-					文件上传 <small>upload</small>
+					文件上传 <small>upload file</small>
 				</h1>
 				<div class="row clearfix">
 						<div class="col-md-12 column">
@@ -22,7 +22,7 @@
 						</div>
 				</div>
 			</div>
-			<form role="form" method="POST" action="/batch/batch_operation/" enctype="multipart/form-data">
+			<form role="form" method="POST" action="/batch/upload_file/" enctype="multipart/form-data">
 				{% csrf_token %}
 				<div class="form-group">
 						<label for="exampleInputFile">文件上传</label>
