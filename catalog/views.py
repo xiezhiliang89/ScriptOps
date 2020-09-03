@@ -39,7 +39,8 @@ OPERATION_BODY=[
             ("SQL操作","/batch/sql_operation")
         ),
         (
-            ("批量文件操作",'/batch/batch_operation'),
+            ("文件上传",'/batch/upload_fille'),
+            ('文件下载','/batch/ddownload_file'),
         )
 ]
 def index(request):

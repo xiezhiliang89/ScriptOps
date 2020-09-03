@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+{% load staticfiles %}
+{% block context %}     
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="page-header">
+				<h1>
+					文件上传 <small>upload</small>
+				</h1>
+				<div class="row clearfix">
+						<div class="col-md-12 column">
+							<ul class="breadcrumb">
+								<li>
+									 <a href="/">Home</a>
+								</li>
+								<li class="active">
+									upload
+								</li>
+							</ul>
+						</div>
+				</div>
+			</div>
+			<form role="form" method="POST" action="/batch/batch_operation/" enctype="multipart/form-data">
+				{% csrf_token %}
+				<div class="form-group">
+						<label for="exampleInputFile">文件上传</label>
+						<input class="file" type="file" id="InputFile" name="batch_file" multiple="multiple" data-show-upload="false"/>
+				</div>
+				<!-- <br> -->
+				<!-- <div class="form-group">
+						<label for="business-type">操作类型</label>
+						<select class="selectpicker form-control" name="business-type" title="请选择业务类型">
+							<option value="CS">CS</option>
+							<option value="GGSN">GGSN</option>
+							<option value="EGGSN">EGGSN</option>
+							<option value="EGGSN2">EGGSN2</option>
+							<option value="INTER">INTER</option>
+							<option value="WLAN">WLAN</option>
+							<option value="FIX">FIX</option>
+							<option value="ALL">ALL</option>
+						</select>
+				</div> -->
+				<!-- <br> -->
+
+				<br>
+				<div class="form-group">
+					<button class="btn btn-primary btn-lg btn-block active" type="submit">执行</button>
+				</div>
+
+			</form> 
+			<h2>
+				执行结果
+			</h2>
+
+			<pre> {{ result|safe }} </pre> 
+
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="{% static 'jQuery/js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+{% endblock context %}

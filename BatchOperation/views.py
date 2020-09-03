@@ -19,12 +19,13 @@ def batch_operation(request):
             for c in f.chunks():
                 dest.write(c)
             dest.close()
+            
             result.append((f.name,os.path.exists(os.path.join(filepath,f.name))))
         
         context={'result':result}
         # return HttpResponse("<h2>文件上传成功</h2>")
-        return render(request,'batch_operation.html',context)
-    return render(request,'batch_operation.html')
+        return render(request,'upload_fille.html',context)
+    return render(request,'upload_fille.html')
 
 def sql_operation(request):
     if request.method=="POST":
