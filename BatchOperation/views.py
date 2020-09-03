@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse 
+from django.http import FileResponse
 import os
 from .CallScript import call_script
 # Create your views here.
@@ -7,7 +8,7 @@ from .CallScript import call_script
 
 def upload(request):
     if request.method=='POST':
-        businessType=request.POST['business-type']
+        #businessType=request.POST['business-type']
         batchFile=request.FILES.getlist('batch_file')
         # print(type(batchFile))
         # print(businessType)
@@ -28,8 +29,14 @@ def upload(request):
     return render(request,'upload_file.html')
 
 def download(request):
+    if request.method=='POST':
+        filepath=request.POST.get('filepath')
+        response=FileResponse(open(filepath,rb))
+        response['Content-Type']='application/octet-stream'
+        response['Content-Disposition'] = 'attachment;filename={0}'.format(filepath.split('/')[-1])
+        return response
     return render(request,'download_file.html')
-
+    
 
 def sql_operation(request):
     if request.method=="POST":
