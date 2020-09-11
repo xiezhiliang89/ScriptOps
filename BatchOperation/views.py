@@ -52,3 +52,30 @@ def sql_operation(request):
             context = {'message':message,'sql':sql}
             return render(request,'sql_operation.html',context)
     return render(request,'sql_operation.html')
+
+def sql_file_operation(request):
+    if request.method=="POST":
+        sql='\"'+request.POST.get('sql')+'\"'
+        batchFile = request.FILES.getlist('batch_file')
+        filepath = "/ocs/opsadmin/ScriptOps/BatchOperation/batch_fille"
+        result = []
+        for f in batchFile:
+            dest = open(os.path.join(filepath, f.name), mode='wb')
+            for c in f.chunks():
+                dest.write(c)
+            dest.close()
+            result.append((f.name, os.path.exists(os.path.join(filepath, f.name))))
+        context = {'result': result}
+
+        buss_type=request.POST.get('business-type')
+        message=call_script('BatchOperation',buss_type,sql)
+        sql=sql.strip('\"')
+        if message:
+            context={'message':message,'sql':sql}
+            return render(request,'sql_file_operation.html',context)
+        else:
+            message = '脚本调用失败，请联系管理员！'
+            context = {'message':message,'sql':sql}
+            return render(request,'sql_file_operation.html',context)
+    return render(request,'sql_file_operation.html')
+

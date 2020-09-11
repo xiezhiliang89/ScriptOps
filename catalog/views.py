@@ -34,9 +34,12 @@ STARTUP_BODY=[
 
 OPERATION_BODY=[
         (
-            ("账户信息修改",''),
-            ("产品信息变更",''),
-            ("SQL操作","/batch/sql_operation")
+            #("账户信息修改",''),
+            #("产品信息变更",''),
+            ("SQL操作","/batch/sql_operation"),
+        ),
+        (
+            ("SQL文件操作",'/batch/sql_file_operation'),
         ),
         (
             ("文件上传",'/batch/upload_file'),
@@ -52,7 +55,8 @@ def index(request):
                 "proxy_tool":STARTUP_BODY[0],
                 "app_tool":STARTUP_BODY[1],
                 "info_change":OPERATION_BODY[0],
-                "batch_change":OPERATION_BODY[1],
+                "batch_sql_change":OPERATION_BODY[1],
+                "batch_change": OPERATION_BODY[2],
             }
     )
     return render(request,'index.html',context)
