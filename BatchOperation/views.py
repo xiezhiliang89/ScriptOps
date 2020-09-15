@@ -55,11 +55,11 @@ def sql_operation(request):
 
 def sql_file_operation(request):
     if request.method=="POST":
-        sql='\"'+request.POST.get('sql')+'\"'
-        batchFile = request.FILES.getlist('batch_file')
-        filepath = "/ocs/opsadmin/ScriptOps/BatchOperation/batch_fille"
+        #sql='\"'+request.POST.get('sql')+'\"'
+        sqlFile = request.FILES.getlist('sql_file')
+        filepath = "/ocs/opsadmin/ScriptOps/BatchOperation/sql_fille"
         result = []
-        for f in batchFile:
+        for f in sqlFile:
             dest = open(os.path.join(filepath, f.name), mode='wb')
             for c in f.chunks():
                 dest.write(c)
@@ -68,14 +68,13 @@ def sql_file_operation(request):
         context = {'result': result}
 
         buss_type=request.POST.get('business-type')
-        message=call_script('BatchOperation',buss_type,sql)
-        sql=sql.strip('\"')
+        message=call_script('SqlFileOperation',buss_type,sqlFile)
         if message:
-            context={'message':message,'sql':sql}
+            context={'message':message}
             return render(request,'sql_file_operation.html',context)
         else:
             message = '脚本调用失败，请联系管理员！'
-            context = {'message':message,'sql':sql}
+            context = {'message':message}
             return render(request,'sql_file_operation.html',context)
     return render(request,'sql_file_operation.html')
 
