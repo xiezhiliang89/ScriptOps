@@ -35,6 +35,14 @@
 						<label for="exampleInputFile">SQL文件上传</label>
 						<input class="file" type="file" id="InputFile" name="sql_file" data-show-upload="false"/>
 				</div>
+
+				<div class="form-group">
+					<button class="btn btn-primary btn-lg btn-block active" type="submit" name="sqlfile_upload">执行文件上传</button>
+				</div>
+                <h2>
+				    SQL文件上传结果
+			    </h2>
+                <pre> {{ result }} </pre>
 				<!-- <div class="from-group">
 					<label for="host">数据库</label>
 					<select class="selectpicker form-control" name="host" title="请选择数据库">
@@ -52,10 +60,7 @@
 						</select>
 				</div>
                 <br>
-                <br>
-				<div class="form-group">
-					<button class="btn btn-primary btn-lg btn-block active" type="submit">执行文件上传</button>
-				</div>
+
 				<!-- <div class="from-group">
 						<label for="business-type">执行模式</label>
 						<select class="selectpicker form-control" name="operation-type" title="请选择执行模式">
@@ -68,15 +73,17 @@
 				</div> -->
 				<!-- <br> -->
 				<div class="form-group">
-					<button class="btn btn-primary btn-lg btn-block active" type="submit">SQL批量执行</button>
+					<button class="btn btn-primary btn-lg btn-block active" type="submit" name="sqlfile_exec">SQL批量执行</button>
 				</div>
 
-			</form> 
-			<h2>
-				执行结果
-			</h2>
+                <h2>
+				SQL执行结果
+			    </h2>
 
-			<pre> {{ message }} </pre> 
+			    <pre> {{ message }} </pre>
+
+			</form> 
+
 
 		</div>
 	</div>
