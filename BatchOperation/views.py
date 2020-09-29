@@ -56,7 +56,6 @@ def sql_operation(request):
 def sql_file_operation(request):
     if request.method=="POST":
         buss_type = request.POST.get('business-type')
-        print (buss_type)
         if 'sqlfile_upload' in request.POST:
             #sql='\"'+request.POST.get('sql')+'\"'
             sqlFile = request.FILES.getlist('sql_file')
