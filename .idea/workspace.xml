@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dbebae5c-4d44-4f59-be7c-ddb656fc125e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/BatchOperation/CallScript.py" afterPath="$PROJECT_DIR$/BatchOperation/CallScript.py" />
       <change beforePath="$PROJECT_DIR$/BatchOperation/templates/sql_file_operation.html" afterPath="$PROJECT_DIR$/BatchOperation/templates/sql_file_operation.html" />
       <change beforePath="$PROJECT_DIR$/BatchOperation/views.py" afterPath="$PROJECT_DIR$/BatchOperation/views.py" />
     </list>
@@ -18,7 +19,7 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/catalog/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="460">
               <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
@@ -27,11 +28,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sql_file_operation.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sql_file_operation.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BatchOperation/templates/sql_file_operation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="71" column="33" lean-forward="true" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
+            <state relative-caret-position="644">
+              <caret line="43" column="110" lean-forward="false" selection-start-line="43" selection-start-column="96" selection-end-line="43" selection-end-column="110" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="upload_file.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BatchOperation/templates/upload_file.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="644">
+              <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="135" />
               <folding />
             </state>
           </provider>
@@ -50,8 +61,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BatchOperation/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="737">
-              <caret line="81" column="52" lean-forward="true" selection-start-line="81" selection-start-column="52" selection-end-line="81" selection-end-column="52" />
+            <state relative-caret-position="2001">
+              <caret line="87" column="41" lean-forward="false" selection-start-line="87" selection-start-column="41" selection-end-line="87" selection-end-column="41" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -59,11 +70,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="upload_file.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BatchOperation/templates/upload_file.html">
+      <file leaf-file-name="CallScript.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BatchOperation/CallScript.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="603">
-              <caret line="59" column="10" lean-forward="true" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
+            <state relative-caret-position="92">
+              <caret line="5" column="72" lean-forward="false" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sql_operation.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BatchOperation/templates/sql_operation.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1380">
+              <caret line="60" column="88" lean-forward="false" selection-start-line="60" selection-start-column="82" selection-end-line="60" selection-end-column="88" />
               <folding />
             </state>
           </provider>
@@ -74,16 +95,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="322">
               <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pre_look.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UserQuery/templates/pre_look/pre_look.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -129,11 +140,11 @@
         <option value="$PROJECT_DIR$/BatchOperation/templates/upload_file.html" />
         <option value="$PROJECT_DIR$/BatchOperation/templates/download_file.html" />
         <option value="$PROJECT_DIR$/BatchOperation/urls.py" />
-        <option value="$PROJECT_DIR$/BatchOperation/CallScript.py" />
         <option value="$PROJECT_DIR$/UserQuery/templates/pre_look/pre_look.html" />
         <option value="$PROJECT_DIR$/catalog/views.py" />
-        <option value="$PROJECT_DIR$/BatchOperation/views.py" />
         <option value="$PROJECT_DIR$/BatchOperation/templates/sql_file_operation.html" />
+        <option value="$PROJECT_DIR$/BatchOperation/views.py" />
+        <option value="$PROJECT_DIR$/BatchOperation/CallScript.py" />
       </list>
     </option>
   </component>
@@ -165,6 +176,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -193,7 +205,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -515,13 +526,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/catalog/static/bootstrap/css/bootstrap-select.css.map">
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/catalog/static/jQuery/js/jquery.min.js">
@@ -554,16 +565,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BatchOperation/CallScript.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="43" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ScriptOps/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
@@ -593,7 +594,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -623,17 +623,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/catalog/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2760">
-          <caret line="120" column="75" lean-forward="false" selection-start-line="120" selection-start-column="75" selection-end-line="120" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/catalog/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="460">
           <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
@@ -649,36 +641,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BatchOperation/templates/upload_file.html">
+    <entry file="file://$PROJECT_DIR$/catalog/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="59" column="10" lean-forward="true" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
+        <state relative-caret-position="2760">
+          <caret line="120" column="75" lean-forward="false" selection-start-line="120" selection-start-column="75" selection-end-line="120" selection-end-column="75" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BatchOperation/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="737">
-          <caret line="81" column="52" lean-forward="true" selection-start-line="81" selection-start-column="52" selection-end-line="81" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BatchOperation/templates/sql_operation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="944">
+        <state relative-caret-position="1380">
           <caret line="60" column="88" lean-forward="false" selection-start-line="60" selection-start-column="82" selection-end-line="60" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BatchOperation/templates/upload_file.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="135" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BatchOperation/templates/sql_file_operation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="71" column="33" lean-forward="true" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
+        <state relative-caret-position="644">
+          <caret line="43" column="110" lean-forward="false" selection-start-line="43" selection-start-column="96" selection-end-line="43" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BatchOperation/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2001">
+          <caret line="87" column="41" lean-forward="false" selection-start-line="87" selection-start-column="41" selection-end-line="87" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BatchOperation/CallScript.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="5" column="72" lean-forward="false" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
           <folding />
         </state>
       </provider>

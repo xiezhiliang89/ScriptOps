@@ -61,6 +61,7 @@ def sql_file_operation(request):
             sqlFile = request.FILES.getlist('sql_file')
             filepath = "/ocs/opsadmin/ScriptOps/BatchOperation/sql_fille"
             result = []
+
             for f in sqlFile:
                 dest = open(os.path.join(filepath, f.name), mode='wb')
                 for c in f.chunks():
@@ -68,16 +69,21 @@ def sql_file_operation(request):
                 dest.close()
                 result.append((f.name, os.path.exists(os.path.join(filepath, f.name))))
             context = {'result': result}
+
+            message = call_script('SqlFileOperation', buss_type, sqlFile)
+            if message:
+                context.update({'message': message})
+                return render(request, 'sql_file_operation.html', context)
             return render(request, 'sql_file_operation.html', context)
 
-        elif 'sqlfile_exec' in request.POST:
-            message=call_script('SqlFileOperation',buss_type,sqlFile)
-            if message:
-                context={'message':message}
-                return render(request,'sql_file_operation.html',context)
-            else:
-                message = '脚本调用失败，请联系管理员！'
-                context = {'message':message}
-                return render(request,'sql_file_operation.html',context)
+        # elif 'sqlfile_exec' in request.POST:
+        #     message=call_script('SqlFileOperation',buss_type,sqlFile)
+        #     if message:
+        #         context={'message':message}
+        #         return render(request,'sql_file_operation.html',context)
+        #     else:
+        #         message = '脚本调用失败，请联系管理员！'
+        #         context = {'message':message}
+        #         return render(request,'sql_file_operation.html',context)
     return render(request,'sql_file_operation.html')
 

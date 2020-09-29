@@ -7,7 +7,7 @@
 		<div class="col-md-12 column">
 			<div class="page-header">
 				<h1>
-					SQL执行 <small>sql文件可视化执行</small>
+					SQL执行 <small>upload_sql_file_operation</small>
 				</h1>
 				<div class="row clearfix">
 						<div class="col-md-12 column">
@@ -22,35 +22,14 @@
 						</div>
 				</div>
 			</div>
-
-
 			<form role="form" method="POST" action="/batch/sql_file_operation/">
                 {% csrf_token %}
-                
-				<!--<div class="form-group">
-					<label for="sql">sql文件</label><input class="form-control" id="InputSQL" type="text" name="sql" value="{{ sql }}" />
-				</div>-->
-
                 <div class="form-group">
 						<label for="exampleInputFile">SQL文件上传</label>
-						<input class="file" type="file" id="InputFile" name="sql_file" data-show-upload="false"/>
+                        <input class="file" type="file" id="InputFile" name="batch_file" multiple="multiple" data-show-upload="false"/>
 				</div>
 
-				<div class="form-group">
-					<button class="btn btn-primary btn-lg btn-block active" type="submit" name="sqlfile_upload">执行文件上传</button>
-				</div>
-                <h2>
-				    SQL文件上传结果
-			    </h2>
-                <pre> {{ result }} </pre>
-				<!-- <div class="from-group">
-					<label for="host">数据库</label>
-					<select class="selectpicker form-control" name="host" title="请选择数据库">
-						<option value="bf1">mysql</option>
-						<option value="bf2">oracle</option>
-					</select>
-				</div> -->
-				<br>
+                <br>
 				<div class="from-group">
 						<label for="business-type">归属域</label>
 						<select class="selectpicker form-control" name="business-type" title="请选择执行域">
@@ -61,6 +40,21 @@
 				</div>
                 <br>
 
+				<div class="form-group">
+					<button class="btn btn-primary btn-lg btn-block active" type="submit" name="sqlfile_upload">执行SQL文件</button>
+				</div>
+                <h2>
+				    SQL文件执行结果
+			    </h2>
+                <pre> {{ result|safe }} </pre>
+                <pre> {{ message|safe }} </pre>
+				<!-- <div class="from-group">
+					<label for="host">数据库</label>
+					<select class="selectpicker form-control" name="host" title="请选择数据库">
+						<option value="bf1">mysql</option>
+						<option value="bf2">oracle</option>
+					</select>
+				</div> -->
 				<!-- <div class="from-group">
 						<label for="business-type">执行模式</label>
 						<select class="selectpicker form-control" name="operation-type" title="请选择执行模式">
@@ -72,19 +66,7 @@
 						</select>
 				</div> -->
 				<!-- <br> -->
-				<div class="form-group">
-					<button class="btn btn-primary btn-lg btn-block active" type="submit" name="sqlfile_exec">SQL批量执行</button>
-				</div>
-
-                <h2>
-				SQL执行结果
-			    </h2>
-
-			    <pre> {{ message }} </pre>
-
-			</form> 
-
-
+			</form>
 		</div>
 	</div>
 </div>

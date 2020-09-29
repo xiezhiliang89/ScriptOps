@@ -3,7 +3,7 @@ import subprocess
 PERL_TOOLS_DIR="/ocs/ocsrun/r7code/perl/ocs_perl_tools"
 SQL_TOOLS_DIR="/ocs/ocsrun/r7code/perl/do_sql"
 SCRIPT_PATH={
-    'UserQuery':os.path.join(PERL_TOOLS_DIR,'django_control/look_oam.pl -u {0} -t {1} -o {2} -d {3}'),
+    'UserQuery':os.path.join(PERL_TOOLS_DIR,'django_control/perl_control.pl -u {0} -t {1} -o {2} -d {3}'),
     'BatchOperation':os.path.join(SQL_TOOLS_DIR,'do_sql.pl -t {0} -s {1}'),
     'SqlFileOperation':os.path.join(SQL_TOOLS_DIR,'file_do_sql.pl -t {0} -f {1}')
 }
