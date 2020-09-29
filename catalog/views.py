@@ -15,13 +15,13 @@ QUERY_BODY=[
             ("CB用户赠送信息(oracle)","/userquery/pre_look"),
             #("零点余额","/userquery/zero_balance"),
             #("账单查询","/userquery/bill"),
-            #("用户路由","/userquery/user_route"),
             ("赠送活动查询(timesten)","/userquery/present"),
+            ("在线proxy路由查询(proxy)","/userquery/user_route"),
         ),
-        (
-            ("AOP接口日志查询",''),
-            ("Proxy日志查询",''),
-        ),
+        # (
+        #     ("AOP接口日志查询",''),
+        #     ("Proxy日志查询",''),
+        # ),
 ]
 STARTUP_BODY=[
         (

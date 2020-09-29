@@ -22,7 +22,7 @@
 						</div>
 				</div>
 			</div>
-			<form role="form" method="POST" action="/batch/sql_file_operation/">
+			<form role="form" method="POST" action="/batch/sql_file_operation/" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-group">
 						<label for="exampleInputFile">SQL文件上传</label>
