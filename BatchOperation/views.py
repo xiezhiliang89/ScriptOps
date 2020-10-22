@@ -31,7 +31,7 @@ def upload(request):
 def download(request):
     if request.method=='POST':
         filepath=request.POST.get('filepath')
-        response=FileResponse(open(filepath,rb))
+        response=FileResponse(open(filepath,'rb'))
         response['Content-Type']='application/octet-stream'
         response['Content-Disposition'] = 'attachment;filename={0}'.format(filepath.split('/')[-1])
         return response
@@ -57,33 +57,26 @@ def sql_file_operation(request):
     if request.method=="POST":
         buss_type = request.POST.get('business-type')
         if 'sqlfile_upload' in request.POST:
-            #sql='\"'+request.POST.get('sql')+'\"'
             sqlFile = request.FILES.getlist('sql_file')
-            filepath = "/ocs/opsadmin/ScriptOps/BatchOperation/sql_fille"
+            filepath = "/ocscdr/sql_exec_django/batch_sql_file/file"
             result = []
+            sqlFile_name=""
 
             for f in sqlFile:
+                global sqlFile_name=str(f)
                 dest = open(os.path.join(filepath, f.name), mode='wb')
                 for c in f.chunks():
                     dest.write(c)
                 dest.close()
                 result.append((f.name, os.path.exists(os.path.join(filepath, f.name))))
+                result = "[SQL文件上传结果]:" + str(result) + "\n";
             context = {'result': result}
 
-            message = call_script('SqlFileOperation', buss_type, sqlFile)
+            message = call_script('SqlFileOperation', buss_type, sqlFile_name)
+            message = "[SQL文件执行结果]:" + str(message) + "\n";
             if message:
                 context.update({'message': message})
                 return render(request, 'sql_file_operation.html', context)
             return render(request, 'sql_file_operation.html', context)
-
-        # elif 'sqlfile_exec' in request.POST:
-        #     message=call_script('SqlFileOperation',buss_type,sqlFile)
-        #     if message:
-        #         context={'message':message}
-        #         return render(request,'sql_file_operation.html',context)
-        #     else:
-        #         message = '脚本调用失败，请联系管理员！'
-        #         context = {'message':message}
-        #         return render(request,'sql_file_operation.html',context)
     return render(request,'sql_file_operation.html')
 
